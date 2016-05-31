@@ -1,0 +1,21 @@
+First of all, thanks for this great tool!  I love it!  Everything works perfectly but I have one small problem.
+
+While downloading I use:
+$ megacopy --local /home/pi/MEGA --remote /Root/raspberry --download
+
+MEGATOOLS
+- All content is live piped into /home/pi/MEGA
+- So file starts at 0 bytes, and grows until finished
+- Is the file still downloading? Or finished? Or timedout? Or has my box crashed?
+
+OFFICIAL MEGA GUI APP
+- Saves first to a tmp file
+- After download finished, moves file to /home/pi/MEGA
+- If file exists, file is 100% downloaded and ready.
+
+My question:
+Is there a way to see what the file-status is?  Or is it possible to use temp file like in the official app?
+
+Thanks again for your great work.
+
+

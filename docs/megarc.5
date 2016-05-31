@@ -1,0 +1,117 @@
+'\" t
+.\"     Title: megarc
+.\"    Author: [see the "AUTHOR" section]
+.\" Generator: DocBook XSL Stylesheets v1.79.1 <http://docbook.sf.net/>
+.\"      Date: 02/02/2016
+.\"    Manual: Megatools Manual
+.\"    Source: megatools 1.9.97
+.\"  Language: English
+.\"
+.TH "MEGARC" "5" "02/02/2016" "megatools 1.9.97" "Megatools Manual"
+.\" -----------------------------------------------------------------
+.\" * Define some portability stuff
+.\" -----------------------------------------------------------------
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.\" http://bugs.debian.org/507673
+.\" http://lists.gnu.org/archive/html/groff/2009-02/msg00013.html
+.\" ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+.ie \n(.g .ds Aq \(aq
+.el       .ds Aq '
+.\" -----------------------------------------------------------------
+.\" * set default formatting
+.\" -----------------------------------------------------------------
+.\" disable hyphenation
+.nh
+.\" disable justification (adjust text to left margin only)
+.ad l
+.\" -----------------------------------------------------------------
+.\" * MAIN CONTENT STARTS HERE *
+.\" -----------------------------------------------------------------
+.SH "NAME"
+megarc \- Configuration file for megatools
+.SH "SYNOPSIS"
+.sp
+.nf
+\fI~/\&.megarc\fR
+\fI\&./\&.megarc\fR
+.fi
+.SH "DESCRIPTION"
+.sp
+Megatools use INI configuration file to store commonly used login credentials\&. This makes it less bothersome to use the tools, as you can simply write
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ megadf
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+instead of
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+$ megadf \-\-username my@email\&.com \-\-password mypass
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+when using the tools\&.
+.sp
+Configuration file is read either from the current directory or user\(cqs home directory\&. Exceptions are when \-\-ignore\-config\-file was passed to the tool, or when explicit path to the config file was given via \-\-config <path>\&.
+.SH "CONFIG FILE SECTIONS"
+.sp
+All sections are optional\&. All names are case sensitive, thus you must write [Login], and not [login], and so on\&.
+.SS "[Login] Section"
+.PP
+Username
+.RS 4
+Your username\&.
+.RE
+.PP
+Password
+.RS 4
+Your password\&. Be aware that back slashes have special meaning\&. If you have back slash in your password, you must escape it with another backslash\&. For example: my\enice\epassword would be written as my\e\enice\e\epassword in the config file\&.
+.RE
+.SS "[Cache] Section"
+.PP
+Timeout
+.RS 4
+Cache timeout in seconds (default is 10 minutes)\&.
+.RE
+.SH "EXAMPLE"
+.sp
+Create ~/\&.megarc (on linux) or mega\&.ini file containing these 3 lines:
+.sp
+.if n \{\
+.RS 4
+.\}
+.nf
+[Login]
+Username = your@email
+Password = yourpassword
+.fi
+.if n \{\
+.RE
+.\}
+.sp
+Run \fBmegadf\fR(1) to check that megatools are able to login to your account\&.
+.SH "SEE ALSO"
+.sp
+\fBmegatools\fR(7), \fBmegarc\fR(5), \fBmegadf\fR(1), \fBmegadl\fR(1), \fBmegaget\fR(1), \fBmegals\fR(1), \fBmegamkdir\fR(1), \fBmegaput\fR(1), \fBmegareg\fR(1), \fBmegarm\fR(1), \fBmegacopy\fR(1), \fBmegafs\fR(1)\&.
+.SH "MEGATOOLS"
+.sp
+Part of the \fBmegatools\fR(7) suite\&.
+.SH "BUGS"
+.sp
+Report bugs at https://github\&.com/megous/megatools or megous@megous\&.com\&.
+.SH "AUTHOR"
+.sp
+Megatools was written by Ondrej Jirman <megous@megous\&.com>, 2013\-2016\&.
+.sp
+Official website is http://megatools\&.megous\&.com\&.
